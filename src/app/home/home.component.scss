@@ -1,5 +1,5 @@
 .jumbotron {
-	background-image: linear-gradient(to right,#CCC 0,#fff 100%);
+	background-image: linear-gradient(to right,#222 0,#fff 100%);
 	//background-image: url('/../../assets/images/code1.jpg');
 	background: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 59%,rgba(44,62,80,0.65) 100%), url('/../../assets/images/code1.jpg') no-repeat;
 	background-size:cover;
@@ -15,6 +15,12 @@ h1 {
 
 h2 {
 	font-size: 1.5rem;
+	font-weight: 100;
+}
+
+h3 {
+	font-size: 2.0rem;
+	font-weight: 100;
 }
 
 .subtitle {
@@ -23,7 +29,14 @@ h2 {
 }
 
 .home-icons {
-	width: 75px;
+	width: 114px;
+  border: 3px solid #222;
+  border-radius: 50%;
+  padding: 15px;
+  margin-bottom: 10px;
+	background: rgb(244, 225, 151);
+	opacity: .75;
+	box-shadow: 2px 2px 6px #726e6e;
 }
 
 .centered {
