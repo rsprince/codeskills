@@ -1,0 +1,63 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h1>Contact</h1>
+			<p>
+				Please let us know how we can be of assistance to your program or
+				individual career growth.
+			</p>
+			<form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+				<mat-form-field appearance="fill">
+					<mat-label>Enter name</mat-label>
+					<input matInput 
+						name="Name"
+						formControlName="Name">
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Enter email</mat-label>
+					<input matInput 
+						name="Email"
+						formControlName="Email">
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Enter phone</mat-label>
+					<input matInput 
+						name="Phone"
+						formControlName="Phone">
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Enter interest</mat-label>
+					<mat-select name="Interest" formControlName="Interest">
+						<mat-option 
+							*ngFor="let interest of interests" 
+							[value]="interest">
+							{{interest}}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Enter comments</mat-label>
+					<textarea matInput 
+						placeholder="Please provide more information"
+						name="Comments"
+						formControlName="Comments">
+					</textarea>
+				</mat-form-field>
+
+			<button mat-raised-button 
+				type="submit"
+				[disabled]="!FormData.valid" 
+				color="primary">
+				Submit
+			</button>
+				
+			</form>
+			
+		</div>
+	</div>
+
+</div>
