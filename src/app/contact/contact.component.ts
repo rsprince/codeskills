@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import { SubmitFormService } from './submit-form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'contact',
@@ -8,8 +9,8 @@ import { SubmitFormService } from './submit-form.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  //form: any = {name: '', email: '', phone: '', interest: '', comments: ''};
   FormData: FormGroup;
+  showForm: boolean = true;
   
   interests: any[] = [
     'UX/ UI Design',
@@ -21,34 +22,42 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private submitFormService: SubmitFormService
+    private submitFormService: SubmitFormService,
+    private route: Router
     ) { }
 
   ngOnInit(): void {
+    this.prepareForm();
+  }
+
+  prepareForm() {
     this.FormData = this.formBuilder.group({
       Name: new FormControl('', [Validators.required]),
       Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-      comment: new FormControl('', [Validators.required])
-    }
-    )
+      Phone: new FormControl('', [Validators.required]),
+      Interest: new FormControl('', [Validators.required]),
+      Comments: new FormControl('', [Validators.required])
+    });
   }
 
-  submitForm() {
-    console.log(this.form.name, this.form.email, this.form.phone, this.form.interest, this.form.comments);
-    let formdata: string = this.form.name + this.form.email + this.form.phone + this.form.interest + this.form.comments;
-    
-    console.log(formdata);
+  onSubmit(FormData) {
+    this.showForm = false;
 
-    this.submitFormService.PostMessage(formdata)
+    setTimeout(() => {
+      this.submitFormService.PostMessage(FormData)
       .subscribe(response => {
-        location.href = 'https://mailthis.to/confirm' //
-        console.log(response)
+        alert("Your inquiry is being submitted.");
+        location.href = 'https://mailthis.to/confirm';
+        
       }, error => {
         console.warn(error.responseText)
         console.log({ error })
-      })
+      });
+        this.prepareForm();
+        this.showForm = true;
+      });
 
-      this.form = {name: '', email: '', phone: '', interest: '', comments: ''};
-    } 
+
+  } 
 
 }
