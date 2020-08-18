@@ -3,19 +3,19 @@
 	//background-image: url('/../../assets/images/code1.jpg');
 	background: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 59%,rgba(44,62,80,0.65) 100%), url('/../../assets/images/code1.jpg') no-repeat;
 	background-size:cover;
-	height: 400px;
+	height: 428px;
 	color:white;
 	text-shadow: 3px 3px 10px #333352;
 }
 
 h1 {
-  font-size: 3.5rem;
-  font-weight: 100;
+  font-size: 3.5rem !important;
+  font-weight: 100 !important;
 }
 
 h2 {
-	font-size: 1.5rem;
-	font-weight: 100;
+	font-size: 1.5rem !important;
+	font-weight: 100 !important;
 }
 
 h3 {
@@ -26,6 +26,10 @@ h3 {
 .subtitle {
 	font-size: 1.5rem;
 	font-weight: 100;
+}
+
+.home-container {
+margin-top: 20px;;
 }
 
 .home-icons {
@@ -41,4 +45,8 @@ h3 {
 
 .centered {
 	text-align: centered;
+}
+
+a {
+	color: #222;
 }
