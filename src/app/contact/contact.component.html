@@ -1,7 +1,21 @@
 <div class="container">
-	<h1>Contact</h1>
+	<!--<h1>Contact</h1>-->
 	<div class="row">
 		<div class="col-md-6">
+			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd5pmquFJMn1pkUqTKINbgVSMNLTmfNVy0TBZat6vk9FPN9-A/viewform?embedded=true" scrolling="no" width="640" height="1281" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+		</div>
+	</div>
+	<div class="row more-info">
+		<div class="col-md-6">
+			<p>For more information:</p>
+			<p><strong>Creative Digital Media, Inc.</strong></p>
+			<p>4000 NE 169 St., #400</p>
+			<p>N. Miami Beach, FL 33160</p>
+			<p>tel. 786.486.8416</p>
+		</div>
+	</div>
+
+			<!--<div class="col-md-6">
 			<p>
 				Please let us know how we can be of assistance to your program or
 				individual career growth.
@@ -9,21 +23,21 @@
 			<form *ngIf="showForm" [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
 				<mat-form-field appearance="fill">
 					<mat-label>Enter name</mat-label>
-					<input matInput 
+					<input matInput
 						name="Name"
 						formControlName="Name">
 				</mat-form-field>
 
 				<mat-form-field appearance="fill">
 					<mat-label>Enter email</mat-label>
-					<input matInput 
+					<input matInput
 						name="Email"
 						formControlName="Email">
 				</mat-form-field>
 
 				<mat-form-field appearance="fill">
 					<mat-label>Enter phone</mat-label>
-					<input matInput 
+					<input matInput
 						name="Phone"
 						formControlName="Phone">
 				</mat-form-field>
@@ -31,8 +45,8 @@
 				<mat-form-field appearance="fill">
 					<mat-label>Enter interest</mat-label>
 					<mat-select name="Interest" formControlName="Interest">
-						<mat-option 
-							*ngFor="let interest of interests" 
+						<mat-option
+							*ngFor="let interest of interests"
 							[value]="interest">
 							{{interest}}
 						</mat-option>
@@ -41,30 +55,23 @@
 
 				<mat-form-field appearance="fill">
 					<mat-label>Enter comments</mat-label>
-					<textarea matInput 
+					<textarea matInput
 						placeholder="Please provide more information"
 						name="Comments"
 						formControlName="Comments">
 					</textarea>
 				</mat-form-field>
 
-			<button mat-raised-button 
+			<button mat-raised-button
 				type="submit"
-				[disabled]="!FormData.valid" 
+				[disabled]="!FormData.valid"
 				color="primary">
 				Submit
 			</button>
-				
-			</form>
-			
-		</div>
 
-		<div class="offset-1 col-md-5">
-			<p>For more information:</p>
-			<p><strong>Creative Digital Media, Inc.</strong></p>
-			<p>4000 NE 169 St., #400, N. Miami Beach, FL 33160</p>
-			<p>tel. 786.486.8416</p>
-		</div>
-	</div>
+			</form>
+
+		</div>-->
+
 
 </div>
